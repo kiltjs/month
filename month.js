@@ -3,9 +3,7 @@
 (function (root, definition) {
 
   if ( typeof window === 'undefined' ) {
-    if ( typeof module !== 'undefined' ) {
-      module.exports = definition();
-    }
+    module.exports = definition();
   } else {
     if ( root.fn ) {
       fn.define('Month', function () { return definition(root); } );
