@@ -77,8 +77,3 @@ Month.prototype.next = function () {
 };
 
 module.exports = Month;
-
-// Month.config({ startDay: 1 });
-
-/* Usage below */
-console.log( new Month(2016, 3) );
