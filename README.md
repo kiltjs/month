@@ -3,10 +3,16 @@ calendar-month
 ==============
 
 
-> installation
+> node
 
 ``` sh
 npm i calendar-month --save
+```
+
+> bower
+
+``` sh
+bower i calendar-month --save
 ```
 
 > example:
