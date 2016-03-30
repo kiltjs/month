@@ -1,7 +1,7 @@
 
 calendar-month
 ==============
-
+[![](https://img.shields.io/npm/v/calendar-month.svg)](https://www.npmjs.com/package/calendar-month) [![](https://img.shields.io/bower/v/calendar-month.svg)](http://bower.io/search/?q=calendar-month)
 
 > node
 
