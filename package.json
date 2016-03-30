@@ -1,26 +1,26 @@
 {
-  "name": "calendar-month",
-  "version": "0.0.2",
-  "description": "vanillajs month data handler",
-  "main": "lib/month.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jstools/month.git"
-  },
-  "keywords": [
-    "month",
-    "calendar"
-  ],
-  "author": "Jesús Germade <jesus@germade.es>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jstools/month/issues"
-  },
-  "homepage": "https://github.com/jstools/month#readme",
-  "devDependencies": {
-    "nitro": "^1.5.57"
-  }
+	"name": "calendar-month",
+	"version": "0.0.3",
+	"description": "vanillajs month data handler",
+	"main": "lib/month.js",
+	"scripts": {
+		"test": "node test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jstools/month.git"
+	},
+	"keywords": [
+		"month",
+		"calendar"
+	],
+	"author": "Jesús Germade <jesus@germade.es>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jstools/month/issues"
+	},
+	"homepage": "https://github.com/jstools/month#readme",
+	"devDependencies": {
+		"nitro": "^1.5.57"
+	}
 }

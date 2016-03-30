@@ -1,25 +1,26 @@
 {
-  "name": "calendar-month",
-  "description": "vanillajs month data handler",
-  "main": "dist/month.min.js",
-  "authors": [
-    "Jesús Germade <jesus@germade.es>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "month",
-    "calendar"
-  ],
-  "homepage": "https://github.com/jstools/month",
-  "moduleType": [
-    "amd",
-    "globals"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+	"name": "calendar-month",
+	"description": "vanillajs month data handler",
+	"main": "dist/month.min.js",
+	"authors": [
+		"Jesús Germade <jesus@germade.es>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"month",
+		"calendar"
+	],
+	"homepage": "https://github.com/jstools/month",
+	"moduleType": [
+		"amd",
+		"globals"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"version": "0.0.3"
 }
