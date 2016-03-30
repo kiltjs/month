@@ -12,7 +12,7 @@ npm i calendar-month --save
 > bower
 
 ``` sh
-npm i calendar-month --save
+bower i calendar-month --save
 ```
 
 > example:
