@@ -2,7 +2,7 @@
   "name": "calendar-month",
   "version": "0.0.2",
   "description": "vanillajs month data handler",
-  "main": "month.js",
+  "main": "lib/month.js",
   "scripts": {
     "test": "node test.js"
   },

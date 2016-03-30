@@ -1,5 +1,5 @@
 
-var Month = require('./month');
+var Month = require('./lib/month');
 
 Month.config({ startDay: 1 });
 
