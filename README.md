@@ -20,10 +20,11 @@ bower i calendar-month --save
 ``` js
 var Month = require('./month');
 
+// startDay to set Monday as first week day
 Month.config({ startDay: 1 });
 
 // months from 0 (january) ... to 11 (december)
-new Month(2016, 3);
+new Month(2016, 2);
 ```
 
 > returns:
