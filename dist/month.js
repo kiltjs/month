@@ -41,19 +41,29 @@ function monthInformation(year, month, m) {
   if (Month.options.startDay !== undefined) {
     meta.startDay = Month.options.startDay;
   }
-  prevMonthDays = new Date(year, month - 1, 0).getDate() - meta.startDay;
+
+  var previousMonth = new Date(year, month - 1, 0),
+      nextMonth = new Date(year, month + 1, 0);
+
+  prevMonthDays = previousMonth.getDate() - meta.startDay;
 
   var count = 0;
   for (var i = 0; i < 42; i++) {
     var day = {};
     if (i < meta.startDay) {
-      day.date = prevMonthDays = prevMonthDays + 1;
+      day.date = ++prevMonthDays;
       day.previous = true;
+      day.month = previousMonth.getMonth();
+      day.year = previousMonth.getFullYear();
     } else if (i > meta.lastDay + (meta.startDay - 1)) {
-      day.date = count = count + 1;
+      day.date = ++count;
       day.next = true;
+      day.month = nextMonth.getMonth();
+      day.year = nextMonth.getFullYear();
     } else {
       day.date = i - meta.startDay + 1;
+      day.month = date.getMonth();
+      day.year = date.getFullYear();
     }
     m.list[m.list.length] = day;
   }
@@ -79,7 +89,7 @@ function extend() {
 function Month(year, month) {
   this.year = year;
   this.month = month;
-  monthInformation(this.year, this.month, this);
+  monthInformation(this.year, month + 1, this);
 }
 
 Month.options = {};
