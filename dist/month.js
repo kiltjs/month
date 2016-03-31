@@ -71,21 +71,6 @@ function monthInformation(year, month, m) {
   return m;
 }
 
-function extend() {
-  var key,
-      dest = [].shift.call(arguments),
-      orig = [].shift.call(arguments);
-
-  while (orig) {
-    for (key in orig) {
-      dest[key] = orig[key];
-    }
-    orig = [].shift.call(arguments);
-  }
-
-  return dest;
-}
-
 function Month(year, month) {
   if (year instanceof Date) {
     month = year.getMonth();
@@ -102,7 +87,9 @@ Month.config = function (key, value) {
   if (typeof key === 'string') {
     Month.options[key] = value;
   } else if (key instanceof Object) {
-    extend(Month.options, key);
+    for (k in key) {
+      Month.options[k] = key[k];
+    }
   }
 };
 
