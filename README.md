@@ -22,13 +22,14 @@ var Month = require('./month');
 
 Month.config({ startDay: 1 });
 
-console.log( new Month(2016, 3) );
+// months from 0 (january) ... to 11 (december)
+new Month(2016, 3);
 ```
 
 > returns:
 
 ``` js
-{
+Month {
   year: 2016,
   month: 3,
   meta: {
