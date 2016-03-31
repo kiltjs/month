@@ -76,10 +76,11 @@ function Month(year, month) {
     month = year.getMonth();
     year = year.getFullYear();
   }
+  var d = new Date(year, month, 1);
 
-  this.year = year;
-  this.month = month;
-  monthInformation(this.year, month + 1, this);
+  this.year = d.getFullYear();
+  this.month = d.getMonth();
+  monthInformation(this.year, this.month + 1, this);
 }
 
 Month.options = {};
@@ -94,11 +95,11 @@ Month.config = function (key, value) {
 };
 
 Month.prototype.previous = function () {
-  return new Month(this.year, this.month - 1);
+  return new Month(this.year, this.month - 1, 1);
 };
 
 Month.prototype.next = function () {
-  return new Month(this.year, this.month + 1);
+  return new Month(this.year, this.month + 1, 1);
 };
 
 module.exports = Month;
