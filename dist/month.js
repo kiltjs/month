@@ -33,18 +33,14 @@ function monthInformation(year, month, m) {
   meta.lastWeekDay = date.getDay();
 
   date.setDate(1);
-  meta.startDay = date.getDay();
+  meta.startDay = date.getDay() - Month.options.startDay || 0;
 
   m.list = [];
-
-  var prevMonthDays = 0;
-  if (Month.options.startDay !== undefined) {
-    meta.startDay = Month.options.startDay;
-  }
 
   var previousMonth = new Date(year, month - 1, 0),
       nextMonth = new Date(year, month + 1, 0);
 
+  var prevMonthDays = 0;
   prevMonthDays = previousMonth.getDate() - meta.startDay;
 
   var count = 0;
