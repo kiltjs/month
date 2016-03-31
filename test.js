@@ -6,5 +6,5 @@ Month.config({ startDay: 1 });
 // months from 0 (january) ... to 11 (december)
 var m = new Month(2016, 2);
 console.log( m );
-console.log( m.previous() );
-console.log( m.next() );
+// console.log( m.previous() );
+// console.log( m.next() );
