@@ -1,6 +1,6 @@
 {
 	"name": "calendar-month",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "vanillajs month data handler",
 	"main": "lib/month.js",
 	"scripts": {
