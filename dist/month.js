@@ -87,6 +87,11 @@ function extend() {
 }
 
 function Month(year, month) {
+  if (year instanceof Date) {
+    month = year.getMonth();
+    year = year.getFullYear();
+  }
+
   this.year = year;
   this.month = month;
   monthInformation(this.year, month + 1, this);
@@ -101,7 +106,13 @@ Month.config = function (key, value) {
   }
 };
 
-Month.prototype.next = function () {};
+Month.prototype.previous = function () {
+  return new Month(this.year, this.month - 1);
+};
+
+Month.prototype.next = function () {
+  return new Month(this.year, this.month + 1);
+};
 
 module.exports = Month;
 
