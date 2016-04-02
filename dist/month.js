@@ -34,6 +34,9 @@ function monthInformation(year, month, m) {
 
   date.setDate(1);
   meta.startDay = date.getDay() - Month.options.startDay || 0;
+  if (meta.startDay < 0) {
+    meta.startDay = meta.startDay + 7;
+  }
 
   m.list = [];
 
@@ -41,6 +44,7 @@ function monthInformation(year, month, m) {
       nextMonth = new Date(year, month + 1, 0);
 
   var prevMonthDays = 0;
+
   prevMonthDays = previousMonth.getDate() - meta.startDay;
 
   var count = 0;
