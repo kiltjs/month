@@ -4,7 +4,8 @@ install:
 	npm install
 
 test:
-	node make lint
+	@$(shell npm bin)/eslint tests
+	@$(shell npm bin)/mocha tests
 
 build: test
 	node make build
