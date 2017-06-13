@@ -21,66 +21,67 @@ bower i calendar-month --save
 var Month = require('./month');
 
 // startDay to set Monday as first week day
-Month.config({ startDay: 1 });
+Month.setFirstWeekDay(1);
 
 // months from 0 (january) ... to 11 (december)
-new Month(2016, 2);
+new Month(2017, 5);
 ```
 
 > returns:
 
 ``` js
 Month {
-  year: 2016,
-  month: 2,
-  meta:
-   { date: 'Tue Mar 01 2016 00:00:00 GMT+0100 (CET)',
-     lastDay: 31,
-     lastWeekDay: 4,
-     startDay: 1 },
+  meta: {
+    date: '2017-05-31T22:00:00.000Z',
+    last_day: 31,
+    last_week_day: 3,
+    week_day: 4
+  },
+  year: 2017,
+  month: 5,
   list: [
-    { date: 29, previous: true, month: 1, year: 2016 },
-    { date: 1, month: 2, year: 2016 },
-    { date: 2, month: 2, year: 2016 },
-    { date: 3, month: 2, year: 2016 },
-    { date: 4, month: 2, year: 2016 },
-    { date: 5, month: 2, year: 2016 },
-    { date: 6, month: 2, year: 2016 },
-    { date: 7, month: 2, year: 2016 },
-    { date: 8, month: 2, year: 2016 },
-    { date: 9, month: 2, year: 2016 },
-    { date: 10, month: 2, year: 2016 },
-    { date: 11, month: 2, year: 2016 },
-    { date: 12, month: 2, year: 2016 },
-    { date: 13, month: 2, year: 2016 },
-    { date: 14, month: 2, year: 2016 },
-    { date: 15, month: 2, year: 2016 },
-    { date: 16, month: 2, year: 2016 },
-    { date: 17, month: 2, year: 2016 },
-    { date: 18, month: 2, year: 2016 },
-    { date: 19, month: 2, year: 2016 },
-    { date: 20, month: 2, year: 2016 },
-    { date: 21, month: 2, year: 2016 },
-    { date: 22, month: 2, year: 2016 },
-    { date: 23, month: 2, year: 2016 },
-    { date: 24, month: 2, year: 2016 },
-    { date: 25, month: 2, year: 2016 },
-    { date: 26, month: 2, year: 2016 },
-    { date: 27, month: 2, year: 2016 },
-    { date: 28, month: 2, year: 2016 },
-    { date: 29, month: 2, year: 2016 },
-    { date: 30, month: 2, year: 2016 },
-    { date: 31, month: 2, year: 2016 },
-    { date: 1, next: true, month: 3, year: 2016 },
-    { date: 2, next: true, month: 3, year: 2016 },
-    { date: 3, next: true, month: 3, year: 2016 },
-    { date: 4, next: true, month: 3, year: 2016 },
-    { date: 5, next: true, month: 3, year: 2016 },
-    { date: 6, next: true, month: 3, year: 2016 },
-    { date: 7, next: true, month: 3, year: 2016 },
-    { date: 8, next: true, month: 3, year: 2016 },
-    { date: 9, next: true, month: 3, year: 2016 },
-    { date: 10, next: true, month: 3, year: 2016 }
+    { date: 29, month: 4, year: 2017, previous: true },
+    { date: 30, month: 4, year: 2017, previous: true },
+    { date: 31, month: 4, year: 2017, previous: true },
+    { date: 1, month: 5, year: 2017, current: true },
+    { date: 2, month: 5, year: 2017, current: true },
+    { date: 3, month: 5, year: 2017, current: true },
+    { date: 4, month: 5, year: 2017, current: true },
+    { date: 5, month: 5, year: 2017, current: true },
+    { date: 6, month: 5, year: 2017, current: true },
+    { date: 7, month: 5, year: 2017, current: true },
+    { date: 8, month: 5, year: 2017, current: true },
+    { date: 9, month: 5, year: 2017, current: true },
+    { date: 10, month: 5, year: 2017, current: true },
+    { date: 11, month: 5, year: 2017, current: true },
+    { date: 12, month: 5, year: 2017, current: true },
+    { date: 13, month: 5, year: 2017, current: true },
+    { date: 14, month: 5, year: 2017, current: true },
+    { date: 15, month: 5, year: 2017, current: true },
+    { date: 16, month: 5, year: 2017, current: true },
+    { date: 17, month: 5, year: 2017, current: true },
+    { date: 18, month: 5, year: 2017, current: true },
+    { date: 19, month: 5, year: 2017, current: true },
+    { date: 20, month: 5, year: 2017, current: true },
+    { date: 21, month: 5, year: 2017, current: true },
+    { date: 22, month: 5, year: 2017, current: true },
+    { date: 23, month: 5, year: 2017, current: true },
+    { date: 24, month: 5, year: 2017, current: true },
+    { date: 25, month: 5, year: 2017, current: true },
+    { date: 26, month: 5, year: 2017, current: true },
+    { date: 27, month: 5, year: 2017, current: true },
+    { date: 28, month: 5, year: 2017, current: true },
+    { date: 29, month: 5, year: 2017, current: true },
+    { date: 30, month: 5, year: 2017, current: true },
+    { date: 1, month: 6, year: 2017, next: true },
+    { date: 2, month: 6, year: 2017, next: true },
+    { date: 3, month: 6, year: 2017, next: true },
+    { date: 4, month: 6, year: 2017, next: true },
+    { date: 5, month: 6, year: 2017, next: true },
+    { date: 6, month: 6, year: 2017, next: true },
+    { date: 7, month: 6, year: 2017, next: true },
+    { date: 8, month: 6, year: 2017, next: true },
+    { date: 9, month: 6, year: 2017, next: true }
   ]
 }
 ```

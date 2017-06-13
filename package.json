@@ -1,8 +1,8 @@
 {
   "name": "calendar-month",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "vanillajs month data handler",
-  "main": "lib/month.js",
+  "main": "month.js",
   "scripts": {
     "test": "node test.js"
   },
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/jstools/month#readme",
   "devDependencies": {
     "eslint": "^4.0.0",
-    "mocha": "^3.4.2",
-    "nitro": "^1.5.57"
+    "mocha": "^3.4.2"
   }
 }
