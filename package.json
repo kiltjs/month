@@ -4,7 +4,7 @@
   "description": "vanillajs month data handler",
   "main": "month.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
