@@ -1,7 +1,8 @@
 
 calendar-month
 ==============
-[![](https://img.shields.io/npm/v/calendar-month.svg)](https://www.npmjs.com/package/calendar-month) [![](https://img.shields.io/bower/v/calendar-month.svg)](http://bower.io/search/?q=calendar-month)
+[![npm](https://img.shields.io/npm/v/calendar-month.svg)](https://www.npmjs.com/package/calendar-month)
+[![Build Status](https://travis-ci.org/kiltjs/month.svg?branch=master)](https://travis-ci.org/kiltjs/month)
 
 > node
 
