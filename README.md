@@ -40,7 +40,7 @@ Month {
   },
   year: 2017,
   month: 5,
-  list: [
+  days: [
     { date: 29, month: 4, year: 2017, previous: true },
     { date: 30, month: 4, year: 2017, previous: true },
     { date: 31, month: 4, year: 2017, previous: true },
