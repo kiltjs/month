@@ -1,41 +1,65 @@
 
+function getDate(year, month, day) {
+  return new Date(Date.UTC(year, month, day));
+}
+
+function addPreviousDays (list, i, n, month, year) {
+  for(; i <= n ; i++ ) list.push({
+    date: i,
+    month: month,
+    year: year,
+    previous: true
+  });
+}
+
+function addNextDays (list, i, n, month, year) {
+  for(; i <= n ; i++ ) list.push({
+    date: i,
+    month: month,
+    year: year,
+    next: true
+  });
+}
+
 function monthInformation(year, month, m, start_day){
 
   m = m || {};
 
   var i, n,
-      d = new Date(year, month, 1),
-      previous_month_d = new Date(year, month, 0),
-      month_last_day = new Date(year, month + 1, 0),
-      next_month_d = new Date(year, month + 1, 1);
+      d = getDate(year, month, 1),
+      previous_month_d = getDate(year, month, 0),
+      month_last_day = getDate(year, month + 1, 0),
+      next_month_d = getDate(year, month + 1, 1);
 
   start_day = start_day || 0;
 
-  var last_day = previous_month_d.getDate();
-  var last_week_day = previous_month_d.getDay();
+  var last_day = previous_month_d.getUTCDate();
+  var last_week_day = previous_month_d.getUTCDay();
 
   m.meta = {
     date: d,
     last_day: last_day,
     last_week_day: last_week_day,
-    week_day: d.getDay(),
+    week_day: d.getUTCDay(),
+    month_last_day: month_last_day
   };
 
-  m.year = d.getFullYear();
-  m.month = d.getMonth();
+  m.year = d.getUTCFullYear();
+  m.month = d.getUTCMonth();
 
   var list = [], lastMonthFirstWeekDay = last_day - last_week_day + start_day;
 
   // previous month days
-  for( i = 0, n = last_week_day + 1 - start_day ; i < n ; i++ ) list.push({
-    date: lastMonthFirstWeekDay + i,
-    month: previous_month_d.getMonth(),
-    year: previous_month_d.getFullYear(),
-    previous: true
-  });
+  addPreviousDays(
+    list,
+    lastMonthFirstWeekDay,
+    last_week_day - start_day + lastMonthFirstWeekDay,
+    previous_month_d.getUTCMonth(),
+    previous_month_d.getUTCFullYear()
+  );
 
   // current month days
-  for( i = 1, n = month_last_day.getDate() ; i <= n ; i++ ) list.push({
+  for( i = 1, n = month_last_day.getUTCDate() ; i <= n ; i++ ) list.push({
     date: i,
     month: month,
     year: year,
@@ -43,12 +67,13 @@ function monthInformation(year, month, m, start_day){
   });
 
   // next month days
-  for( i = 1, n = 42 - list.length ; i <= n ; i++ ) list.push({
-    date: i,
-    month: next_month_d.getMonth(),
-    year: next_month_d.getFullYear(),
-    next: true
-  });
+  addNextDays(
+    list,
+    1,
+    42 - list.length,
+    next_month_d.getUTCMonth(),
+    next_month_d.getUTCFullYear()
+  );
 
   m.days = list;
 
@@ -62,8 +87,8 @@ var default_start_day = 0;
 
 function Month (year, month, start_day) {
   if( year instanceof Date ) {
-    month = year.getMonth();
-    year = year.getFullYear();
+    month = year.getUTCMonth();
+    year = year.getUTCFullYear();
   }
 
   monthInformation(year, month, this, start_day || default_start_day);
