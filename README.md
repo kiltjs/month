@@ -33,7 +33,7 @@ new Month(2017, 5);
 ``` js
 Month {
   meta: {
-    date: 2017-06-01T00:00:00.000Z,
+    date: '2017-06-01T00:00:00.000Z',
     last_day: 31,
     last_week_day: 3,
     week_day: 4,
