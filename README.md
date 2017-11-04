@@ -87,3 +87,78 @@ Month {
   ]
 }
 ```
+
+> example: return dates grouped by day of week
+
+``` js
+var Month = require('./month');
+
+// startDay to set Sunday as first week day (default)
+Month.setFirstWeekDay(0);
+
+// months from 0 (january) ... to 11 (december)
+new Month(2017, 5).getByDay();
+```
+
+> returns:
+
+``` js
+{
+  Sunday: [
+    { date: 28, month: 4, year: 2017, previous: true, day: 'Sunday' },
+    { date: 4, month: 5, year: 2017, day: 'Sunday', current: true },
+    { date: 11, month: 5, year: 2017, day: 'Sunday', current: true },
+    { date: 18, month: 5, year: 2017, day: 'Sunday', current: true },
+    { date: 25, month: 5, year: 2017, day: 'Sunday', current: true },
+    { date: 2, month: 6, year: 2017, next: true, day: 'Sunday' }
+  ],
+  Monday: [
+    { date: 29, month: 4, year: 2017, previous: true, day: 'Monday' },
+    { date: 5, month: 5, year: 2017, day: 'Monday', current: true },
+    { date: 12, month: 5, year: 2017, day: 'Monday', current: true },
+    { date: 19, month: 5, year: 2017, day: 'Monday', current: true },
+    { date: 26, month: 5, year: 2017, day: 'Monday', current: true },
+    { date: 3, month: 6, year: 2017, next: true, day: 'Monday' }
+  ],
+  Tuesday: [
+    { date: 30, month: 4, year: 2017, previous: true, day: 'Tuesday' },
+    { date: 6, month: 5, year: 2017, day: 'Tuesday', current: true },
+    { date: 13, month: 5, year: 2017, day: 'Tuesday', current: true },
+    { date: 20, month: 5, year: 2017, day: 'Tuesday', current: true },
+    { date: 27, month: 5, year: 2017, day: 'Tuesday', current: true },
+    { date: 4, month: 6, year: 2017, next: true, day: 'Tuesday' }
+  ],
+  Wednesday: [
+    { date: 31, month: 4, year: 2017, previous: true, day: 'Wednesday' },
+    { date: 7, month: 5, year: 2017, day: 'Wednesday', current: true },
+    { date: 14, month: 5, year: 2017, day: 'Wednesday', current: true },
+    { date: 21, month: 5, year: 2017, day: 'Wednesday', current: true },
+    { date: 28, month: 5, year: 2017, day: 'Wednesday', current: true },
+    { date: 5, month: 6, year: 2017, next: true, day: 'Wednesday' }
+  ],
+  Thursday: [
+    { date: 1, month: 5, year: 2017, day: 'Thursday', current: true },
+    { date: 8, month: 5, year: 2017, day: 'Thursday', current: true },
+    { date: 15, month: 5, year: 2017, day: 'Thursday', current: true },
+    { date: 22, month: 5, year: 2017, day: 'Thursday', current: true },
+    { date: 29, month: 5, year: 2017, day: 'Thursday', current: true },
+    { date: 6, month: 6, year: 2017, next: true, day: 'Thursday' }
+  ],
+  Friday: [
+    { date: 2, month: 5, year: 2017, day: 'Friday', current: true },
+    { date: 9, month: 5, year: 2017, day: 'Friday', current: true },
+    { date: 16, month: 5, year: 2017, day: 'Friday', current: true },
+    { date: 23, month: 5, year: 2017, day: 'Friday', current: true },
+    { date: 30, month: 5, year: 2017, day: 'Friday', current: true },
+    { date: 7, month: 6, year: 2017, next: true, day: 'Friday' }
+  ],
+  Saturday: [
+    { date: 3, month: 5, year: 2017, day: 'Saturday', current: true },
+    { date: 10, month: 5, year: 2017, day: 'Saturday', current: true },
+    { date: 17, month: 5, year: 2017, day: 'Saturday', current: true },
+    { date: 24, month: 5, year: 2017, day: 'Saturday', current: true },
+    { date: 1, month: 6, year: 2017, next: true, day: 'Saturday' },
+    { date: 8, month: 6, year: 2017, next: true, day: 'Saturday' }
+  ]
+}
+```
