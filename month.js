@@ -1,6 +1,13 @@
 
+var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var BINS = {'Sunday': [], 'Monday': [], 'Tuesday': [], 'Wednesday': [], 'Thursday': [], 'Friday': [], 'Saturday': []};
+
 function getDate(year, month, day) {
   return new Date(Date.UTC(year, month, day));
+}
+
+function getDayOfWeek(year, month, day) {
+  return DAYS[getDate(year, month, day).getUTCDay()];
 }
 
 function addPreviousDays (list, i, n, month, year) {
@@ -8,7 +15,8 @@ function addPreviousDays (list, i, n, month, year) {
     date: i,
     month: month,
     year: year,
-    previous: true
+    previous: true,
+    day: getDayOfWeek(year, month, i)
   });
 }
 
@@ -17,7 +25,8 @@ function addNextDays (list, i, n, month, year) {
     date: i,
     month: month,
     year: year,
-    next: true
+    next: true,
+    day: getDayOfWeek(year, month, i)
   });
 }
 
@@ -63,6 +72,7 @@ function monthInformation(year, month, m, start_day){
     date: i,
     month: month,
     year: year,
+    day: getDayOfWeek(year, month, i),
     current: true
   });
 
@@ -106,5 +116,14 @@ Month.prototype.previous = function () {
 Month.prototype.next = function () {
   return new Month(this.year, this.month + 1, 1);
 };
+
+Month.prototype.getByDay = function() {
+  var bins = JSON.parse(JSON.stringify(BINS));
+  for (let i = 0; i < this.days.length; i++) {
+    var day = this.days[i];
+    bins[day.day].push(day);
+  }
+  return bins;
+}
 
 module.exports = Month;
