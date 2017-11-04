@@ -119,11 +119,11 @@ Month.prototype.next = function () {
 
 Month.prototype.getByDay = function() {
   var bins = JSON.parse(JSON.stringify(BINS));
-  for (let i = 0; i < this.days.length; i++) {
+  for (var i = 0; i < this.days.length; i++) {
     var day = this.days[i];
     bins[day.day].push(day);
   }
   return bins;
-}
+};
 
 module.exports = Month;
