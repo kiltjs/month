@@ -32,6 +32,7 @@ function monthInformation(year, month, m, start_day){
       next_month_d = getDate(year, month + 1, 1);
 
   start_day = start_day || 0;
+  m.start_day = start_day;
 
   var last_day = previous_month_d.getUTCDate();
   var last_week_day = previous_month_d.getUTCDay();
@@ -86,6 +87,14 @@ function monthInformation(year, month, m, start_day){
 var default_start_day = 0;
 
 function Month (year, month, start_day) {
+  if( month < 0 ) {
+    month += 12;
+    year -= 1;
+  } else if( month > 11 ) {
+    month -= 12;
+    year += 1;
+  }
+
   if( year instanceof Date ) {
     month = year.getUTCMonth();
     year = year.getUTCFullYear();
@@ -100,11 +109,11 @@ Month.setFirstWeekDay = function (start_day) {
 };
 
 Month.prototype.previous = function () {
-  return new Month(this.year, this.month - 1, 1);
+  return new Month(this.year, this.month - 1, this.start_day);
 };
 
 Month.prototype.next = function () {
-  return new Month(this.year, this.month + 1, 1);
+  return new Month(this.year, this.month + 1, this.start_day);
 };
 
 module.exports = Month;
