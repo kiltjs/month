@@ -1,13 +1,10 @@
 
-var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var BINS = {'Sunday': [], 'Monday': [], 'Tuesday': [], 'Wednesday': [], 'Thursday': [], 'Friday': [], 'Saturday': []};
-
 function getDate(year, month, day) {
   return new Date(Date.UTC(year, month, day));
 }
 
 function getDayOfWeek(year, month, day) {
-  return DAYS[getDate(year, month, day).getUTCDay()];
+  return parseInt(getDate(year, month, day).getUTCDay(), 10);
 }
 
 function addPreviousDays (list, i, n, month, year) {
@@ -15,8 +12,7 @@ function addPreviousDays (list, i, n, month, year) {
     date: i,
     month: month,
     year: year,
-    previous: true,
-    day: getDayOfWeek(year, month, i)
+    previous: true
   });
 }
 
@@ -25,8 +21,7 @@ function addNextDays (list, i, n, month, year) {
     date: i,
     month: month,
     year: year,
-    next: true,
-    day: getDayOfWeek(year, month, i)
+    next: true
   });
 }
 
@@ -117,11 +112,13 @@ Month.prototype.next = function () {
   return new Month(this.year, this.month + 1, 1);
 };
 
-Month.prototype.getByDay = function() {
-  var bins = JSON.parse(JSON.stringify(BINS));
+Month.prototype.getColumns = function() {
+  var bins = new Array(7);
   for (var i = 0; i < this.days.length; i++) {
     var day = this.days[i];
-    bins[day.day].push(day);
+    var dow = getDayOfWeek(day.year, day.month, day.date);
+    if (!bins[dow]) bins[dow] = [];
+    bins[dow].push(day);
   }
   return bins;
 };
