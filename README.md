@@ -97,7 +97,7 @@ var Month = require('./month');
 Month.setFirstWeekDay(0);
 
 // months from 0 (january) ... to 11 (december)
-new Month(2017, 5).getByDay();
+new Month(2017, 5).getColumns();
 ```
 
 > returns:
