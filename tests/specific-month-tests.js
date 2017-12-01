@@ -135,6 +135,7 @@ describe('specific month (US/UK)', function () {
       actual[day] = arr;
     });
     assert.deepStrictEqual( actual, expected );
+  });
 
   it('january 2018', function () {
 
@@ -246,7 +247,7 @@ describe('specific month (ES)', function () {
 
     testMonthDates(m, test_data['2017-12'].dates, 'previous' );
     testMonthCounters(m, test_data['2017-12'].counters, 'previous' );
-    
+
   });
 
   it('june 2017 getColumns()', function () {
