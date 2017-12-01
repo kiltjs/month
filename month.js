@@ -122,11 +122,13 @@ Month.prototype.next = function () {
 };
 
 Month.prototype.getColumns = function() {
-  var bins = new Array(7);
+  var bins = Array.apply(null, new Array(7)).map(function() {
+    return [];
+  });
   for (var i = 0; i < this.days.length; i++) {
     var day = this.days[i];
     var dow = getDayOfWeek(day.year, day.month, day.date);
-    if (!bins[dow]) bins[dow] = [];
+    // if (!bins[dow]) bins[dow] = [];
     bins[dow].push(day);
   }
   return bins;
