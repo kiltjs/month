@@ -128,7 +128,6 @@ Month.prototype.getColumns = function() {
   for (var i = 0; i < this.days.length; i++) {
     var day = this.days[i];
     var dow = getDayOfWeek(day.year, day.month, day.date);
-    // if (!bins[dow]) bins[dow] = [];
     bins[dow].push(day);
   }
   return bins;
