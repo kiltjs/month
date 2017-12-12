@@ -16,7 +16,7 @@ npm i calendar-month --save
 bower i calendar-month --save
 ```
 
-> example:
+#### Examples
 
 ``` js
 var Month = require('./month');
@@ -88,7 +88,25 @@ Month {
 }
 ```
 
-> example: return dates grouped by day of week
+##### `previous()`, `next()`
+
+``` js
+var Month = require('./month');
+
+// months from 0 (january) ... to 11 (december)
+var m = new Month(2017, 5);
+
+m.previous();
+// return equivalent to `new Month(2017, 4)`
+
+m.next();
+// return equivalent to `new Month(2017, 6)`
+
+```
+
+##### `getColumns()`
+
+> dates grouped by day of week
 
 ``` js
 var Month = require('./month');
