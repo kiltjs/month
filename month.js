@@ -3,6 +3,10 @@ function getDate(year, month, day) {
   return new Date(Date.UTC(year, month, day));
 }
 
+function getDayOfWeek(year, month, day) {
+  return parseInt(getDate(year, month, day).getUTCDay(), 10);
+}
+
 function addPreviousDays (list, i, n, month, year) {
   for(; i <= n ; i++ ) list.push({
     date: i,
@@ -64,6 +68,7 @@ function monthInformation(year, month, m, start_day){
     date: i,
     month: month,
     year: year,
+    day: getDayOfWeek(year, month, i),
     current: true
   });
 
@@ -114,6 +119,18 @@ Month.prototype.previous = function () {
 
 Month.prototype.next = function () {
   return new Month(this.year, this.month + 1, this.start_day);
+};
+
+Month.prototype.getColumns = function() {
+  var bins = Array.apply(null, new Array(7)).map(function() {
+    return [];
+  });
+  for (var i = 0; i < this.days.length; i++) {
+    var day = this.days[i];
+    var dow = getDayOfWeek(day.year, day.month, day.date);
+    bins[dow].push(day);
+  }
+  return bins;
 };
 
 module.exports = Month;
