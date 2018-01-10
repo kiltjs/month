@@ -78,9 +78,6 @@ function monthInformation(year, month, m, start_day){
 
   m.days = list;
 
-  // eslint-disable-next-line
-  // console.log(m);
-
   return m;
 }
 
@@ -118,6 +115,7 @@ Month.prototype.next = function () {
 
 Month.prototype.getColumns = function() {
   var columns = [], column;
+
   for( var c = 0; c < 7; c++ ) {
     column = [];
     columns.push(column);
@@ -127,16 +125,6 @@ Month.prototype.getColumns = function() {
   }
 
   return columns;
-
-  // var bins = Array.apply(null, new Array(7)).map(function() {
-  //   return [];
-  // });
-  // for (var i = 0; i < this.days.length; i++) {
-  //   var day = this.days[i];
-  //   var dow = getDayOfWeek(day.year, day.month, day.date);
-  //   bins[dow].push(day);
-  // }
-  // return bins;
 };
 
 module.exports = Month;
